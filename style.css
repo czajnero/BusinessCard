@@ -16,6 +16,7 @@ body {
     background: linear-gradient(167deg, rgba(246,246,246,1) 0%, rgb(130, 141, 158) 100%);
     margin: 30px 50px;
     line-height: 1.4;
+    animation: introLogo 2s forwards;
 }
 
 img {
@@ -30,22 +31,23 @@ img {
     display: grid;
     grid-gap: 20px;
     padding: 3rem;
-    //grid-template-columns: 1fr 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: minmax(200px, 1fr) 2fr;
+    //animation: introLogo 2s forwards;
 }
 
 .img-logo {
-    //margin: 1rem;
-    padding: 1rem 0;
+    padding: 1rem;
 }
 
 .motto h1 {
     font-size: 3rem;
+    animation: biggerMottoHeader 2s forwards;
 }
 
 .motto p {
     font-size: 1.1rem;
     font-style: italic;
+    animation: biggerMotto 2s forwards;
 }
 
 .nav ul {
@@ -70,8 +72,7 @@ img {
 }
 
 .nav a:hover {
-    background: var(--dark);
-    color: var(--light);
+    animation: switchingColors 1s forwards;
 }
 
 .top-container {
@@ -165,6 +166,11 @@ img {
     box-shadow: var(--shadow);
 }
 
+.portfolio a:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
 .footer {
     margin--top: 2rem;
     background: var(--dark);
@@ -200,6 +206,9 @@ img {
         font-size: 2.5rem;
     }
 
+    .logo {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
 }
 
 @media (max-width: 500px) {
@@ -221,4 +230,25 @@ img {
     .nav ul {
         grid-template-columns: 1fr;
     }
+}
+
+@keyframes switchingColors {
+    //0% {background-color: var(--primary); color: var(--dark);}
+    100% {background-color: var(--dark); color: var(--light);}
+}
+
+@keyframes introLogo {
+    /* 0% {opacity: 0; transform:scale(0);}
+    100% {opacity: 1; transform:scale(1);} */
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes biggerMottoHeader {
+    0% {font-size: 0px;}
+    100% {font-size: 3rem;}
+}
+@keyframes biggerMotto {
+    0% {font-size: 0px;}
+    100% {font-size: 1.1rem;}
 }
