@@ -13,7 +13,7 @@ html {
 
 body {
     background: rgb(246,246,246);
-    background: linear-gradient(167deg, rgba(246,246,246,1) 0%, rgba(205,214,228,1) 100%);
+    background: linear-gradient(167deg, rgba(246,246,246,1) 0%, rgb(130, 141, 158) 100%);
     margin: 30px 50px;
     line-height: 1.4;
 }
@@ -30,10 +30,26 @@ img {
     display: grid;
     grid-gap: 20px;
     padding: 3rem;
-    grid-template-columns: 1fr 1fr;
+    //grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.img-logo {
+    //margin: 1rem;
+    padding: 1rem 0;
+}
+
+.motto h1 {
+    font-size: 3rem;
+}
+
+.motto p {
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 .nav ul {
+    font-family: 'Inknut Antiqua';
     display: grid;
     grid-gap: 20px;
     padding: 1rem;
@@ -85,7 +101,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: start;
-    justify-content: center;
+    justify-content: flex-start;
     box-shadow: var(--shadow);
 }
 
@@ -102,12 +118,31 @@ img {
 }
 
 .skill-box {
-    background: var(--primary);
+    background: rgb(213, 213, 218);
     display: grid;
     align-items: center;
     justify-items: center;
     box-shadow: var(--shadow);
     padding: 1.5rem;
+}
+
+.skill-box ul {
+    list-style: none;
+    line-height: 1.5rem;
+}
+
+.skill-box li {
+    background: #444;
+    color: var(--light);
+    border: 2px solid var(--dark);
+    border-radius: 3rem;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.skill-box p {
+    font-family: 'Inknut Antiqua';
+    font-size: 1.3rem;
 }
 
 .hard-skills {
@@ -138,6 +173,8 @@ img {
     padding: 1rem;
 }
 
+
+
 /* Media queries, responsywnosc */
 @media (max-width: 700px) {
     .content {
@@ -152,6 +189,15 @@ img {
 
     .about-me p {
         font-size: 1.2rem;
+    }
+
+    .skill-box p {
+        font-family: 'Inknut Antiqua';
+        font-size: 1.2rem;
+    }
+
+    .motto h1 {
+        font-size: 2.5rem;
     }
 
 }
